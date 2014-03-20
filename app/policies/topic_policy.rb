@@ -8,4 +8,7 @@ class TopicPolicy < ApplicationPolicy
     user.present? && user.role?(:admin)
   end
 
+  def update?
+    create?
+  end
 end
