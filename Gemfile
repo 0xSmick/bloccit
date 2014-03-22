@@ -10,6 +10,8 @@ gem 'rails', '4.0.3'
 
 gem 'faker'
 
+gem 'redcarpet'
+
 gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'simple_form'
