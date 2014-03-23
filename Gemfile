@@ -12,6 +12,14 @@ gem 'faker'
 
 gem 'redcarpet'
 
+gem 'carrierwave'
+
+gem 'mini_magick'
+
+gem 'fog'
+
+gem 'figaro'
+
 gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'simple_form'
