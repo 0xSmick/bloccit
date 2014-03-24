@@ -8,6 +8,11 @@ topics = []
     description: Faker::Lorem.paragraph
     )
 end
+
+#create 24 posts
+24.times do
+  p = Post.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph)
+end
  
  
  

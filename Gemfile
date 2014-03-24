@@ -8,6 +8,8 @@ gem 'rails', '4.0.3'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 
+gem 'will_paginate', '~> 3.0.5'
+
 gem 'faker'
 
 gem 'redcarpet'
