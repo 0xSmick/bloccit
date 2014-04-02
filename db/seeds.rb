@@ -9,11 +9,15 @@ topics = []
     )
 end
 
-#create 24 posts
+#create 24 posts and 50 comments
 24.times do
   p = Post.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph)
 end
- 
+
+50.times do
+  p = Comment.create(body: Faker::Lorem.sentence)
+end
+
  
  
 # Create 5 users with their own posts

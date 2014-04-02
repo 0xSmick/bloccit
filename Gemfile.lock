@@ -194,6 +194,7 @@ DEPENDENCIES
   jquery-rails
   mini_magick
   pg
+  pry
   pry-rails
   pundit
   rails (= 4.0.3)

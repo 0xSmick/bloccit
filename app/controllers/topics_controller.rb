@@ -2,6 +2,8 @@ class TopicsController < ApplicationController
   def index
     @topics = Topic.paginate(page: params[:page], per_page: 10)
     authorize @topics
+
+    render "topics/index.html.erb"
   end
 
   def new

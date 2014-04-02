@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   def show
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = Post.find(params[:id]).comments
   end
 
   def new
@@ -22,6 +24,7 @@ class PostsController < ApplicationController
     @post.topic = @topic
 
     authorize @post
+
     if @post.save
       redirect_to [@topic, @post], notice: "Post was saved successfully."
     else
