@@ -4,8 +4,11 @@
     <div class="media">
       <div class="media-body">
         <h4 class="media-heading">
-          <%= link_to (markdown comment.body), [@topic, @post] %>
-          <%#= content_tag :p, (markdown comment.body) %>
+          <%= content_tag :p, (markdown comment.body) %>
+    <% if policy(comment).destroy? %>
+      <%= link_to "Delete", [@topic, @post, comment], method: :delete %>
+      <% end %>
+
         </h4>
       </div>
     </div>
