@@ -1,19 +1,13 @@
-<div class="row">
-  <div class="col-md-8">
+  <div class="media">
     <% comments.each do |comment| %>
     <div class="media">
-      <div class="media-body">
-        <h4 class="media-heading">
-          <%= content_tag :p, (markdown comment.body) %>
-    <% if policy(comment).destroy? %>
-      <%= link_to "Delete", [@topic, @post, comment], method: :delete %>
+      <%= content_tag :p, (markdown comment.body) %>
+      <% if policy(comment).destroy? %>
+        <%= link_to "Delete", [@topic, @post, comment], method: :delete %>
       <% end %>
-
-        </h4>
-      </div>
-    </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
+
 
 
