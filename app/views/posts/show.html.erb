@@ -35,6 +35,9 @@
 
 
 <div class ="row">
-  <%= render partial: 'comments/comments.html.erb', locals: {comments: @comments } %>
+   <%#= render partial: 'comments/comments.html.erb', locals: {comments: @comments } %>
+   <%= render partial: 'comments/comments.html.erb', collection: @comments %>
+
+   <%#= render @comments %>
 </div>
 

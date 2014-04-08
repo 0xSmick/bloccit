@@ -6,9 +6,30 @@ class Vote < ActiveRecord::Base
 
   after_save :update_post
 
-  private
+  
 
   def update_post
     self.post.update_rank
   end
+
+  def up_vote?
+    value == 1
+  end
+
+  def down_vote?
+    value == -1
+  end
+  
+  protected
+
+  def some_protected_method
+    puts "bar"
+  end
+
+  private
+
+  def some_private_method
+    puts "foo"
+  end
+
 end

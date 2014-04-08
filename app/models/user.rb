@@ -18,6 +18,11 @@ class User < ActiveRecord::Base
     self.favorites.where(post_id: post.id).first
   end
 
+  def voted(post)
+    self.votes.where(post_id: post.id).first
+  end
+  
+
   private
   
 end
