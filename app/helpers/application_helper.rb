@@ -1,5 +1,11 @@
 module ApplicationHelper
 
+  def comment_url_helper(comment)
+    post = comment.post
+    topic = post.topic
+    [topic, post, comment]
+  end
+
   def markdown(text)
     renderer = Redcarpet::Render::HTML.new
     extensions = {fenced_code_blocks: true}
