@@ -1,0 +1,8 @@
+  <div class="media">
+    <div class="media" id="comment-<%= comments.id %>" >
+      <%= content_tag :p, (markdown comments.body) %>
+      <% if policy(comments).destroy? %>
+        <%= link_to "Delete", comment_url_helper(comments), method: :delete %>
+      <% end %>
+  </div>
+</div>
