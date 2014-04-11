@@ -10,7 +10,7 @@
     </div>
     <% end %>
     <%= form_group_tag(comment.errors[:body]) do %>
-      <%= f.label :body %>
+      <%#= f.label :body, "I think it is me" %>
       <%= f.text_field :body, class: 'form-control', placeholder: "Enter Comment Body" %>
     <div class="form-group">
       <%= f.submit "Add Comment", class: 'btn btn-sucess' %>

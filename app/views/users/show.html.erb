@@ -31,7 +31,7 @@
       </div>
       <div class="tab-pane" id="comments">
         <%#= render @user.comments %>
-        <%= render @current_user.comment >
+        <%= render partial: 'comments/comment', collection: @user.comments %>
       </div>
     </div>
   </div>
