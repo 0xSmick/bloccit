@@ -1,8 +1,6 @@
-  <div class="media">
-    <div class="media" id="comment-<%= comment.id %>" >
-      <%= content_tag :p, (markdown comment.body) %>
-      <% if policy(comment).destroy? %>
-        <%= link_to "Delete", comment_url_helper(comment), method: :delete %>
-      <% end %>
-  </div>
-</div>
+<%= content_tag :div, id: "comment-#{comment.id}" do %>
+  <%= content_tag :p, (markdown comment.body) %>
+  <% if policy(comment).destroy? %>
+    <%= link_to "Delete", comment_url_helper(comment), method: :delete, remote: true %>
+  <% end %>
+<% end %>
