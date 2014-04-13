@@ -29,17 +29,21 @@ class CommentsController < ApplicationController
     @topic = @post.topic
     @comments = @post.comments
 
-    @comment = current_user.comments.build(comment_params)
+    @comment = current_user.comments.build(params.require(:comment).permit(:body, :post_id))
     @comment.post = @post
     @new_comment = Comment.new
 
     authorize @comment
 
     if @comment.save
-      redirect_to [@topic, @post], notice: "Comment was created."
+      flash[:notice] = "Comment was created."
     else
       flash[:error] = "There was an error saving the comment. Please try again."
-      render "posts/show"
+      
+      respond_with(@comment) do |f|
+        f.html {redirect_to [@topic, @post] }
+      end
+      
     end
   end
 
