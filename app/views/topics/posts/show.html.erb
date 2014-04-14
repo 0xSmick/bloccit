@@ -36,8 +36,13 @@
 
 <div class ="row">
    <%#= render partial: 'comments/comments.html.erb', locals: {comments: @comments } %>
-   <%= render partial: 'comments/comment', collection: @comments %>
+     <h2 class='js-comments-count'><%= @comments.count %> Comments</h2>
 
+     <div class='js-comments'>
+        <%= render partial: 'comments/comment', collection: @comments %>
+    </div>
    <%#= render @comments %>
 </div>
+
+
 
