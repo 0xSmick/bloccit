@@ -1,7 +1,7 @@
 class PostPolicy < ApplicationPolicy
 
   def index?
-    true
+    user.present? && (user.role?(:user) || user.role?(:admin) || user.role?(:moderator))
   end
 
   def destroy?
